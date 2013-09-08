@@ -1,0 +1,25 @@
+# use glob syntax
+syntax: glob
+
+build/
+dist/
+*.egg-info
+
+*~
+*.coverage
+*.DS_Store
+*.ignore
+*.log*
+*.orig
+*.out
+*.pdf
+*.ps
+*.pyc
+*.pyo
+*.rdb
+*.swp*
+
+*.idea
+*.sublime-project
+*.sublime-workspace
+
