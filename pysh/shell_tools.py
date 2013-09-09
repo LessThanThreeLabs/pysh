@@ -93,7 +93,7 @@ class ShellChain(ShellCommand):
 		self.commands = commands
 
 	def __str__(self):
-		return ';\n'.join(map(str, self.commands))
+		return '\n'.join(map(str, self.commands))
 
 	def __repr__(self):
 		return '%s(%s)' % (type(self).__name__, ', '.join(map(repr, self.commands)))
