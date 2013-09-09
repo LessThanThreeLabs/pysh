@@ -23,7 +23,10 @@ class ShellAdvertised(ShellCommand):
 		self.actual_command = actual_command or advertised_command
 
 	def __str__(self):
-		to_print = '$ \\x1b[36;1m%s\\x1b[0m\\n' % str(self.advertised_command).replace('%', '%%')
+		def colorize(string):
+			return '\\x1b[36;1m%s\\x1b[0m' % string
+
+		to_print = '$ %s\\n' % '\\n> '.join(map(colorize, str(self.advertised_command).replace('%', '%%').split('\n')))
 		print_command = 'printf %s' % pipes.quote(to_print)
 		return str(ShellAnd(print_command, self.actual_command))
 
