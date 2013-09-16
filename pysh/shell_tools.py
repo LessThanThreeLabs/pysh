@@ -24,7 +24,7 @@ class ShellAdvertised(ShellCommand):
 
 	def __str__(self):
 		def colorize(string):
-			return '\\x1b[36m%s\\x1b[0m' % string
+			return '\\x1b[34m%s\\x1b[0m' % string
 
 		to_print = '$ %s\\n' % '\\n> '.join(map(colorize, str(self.advertised_command).replace('%', '%%').split('\n')))
 		print_command = 'printf %s' % pipes.quote(to_print)
